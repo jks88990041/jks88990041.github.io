@@ -84,5 +84,5 @@ slider: function(i){i.wrap=this,new t(i)
 var commentElement=document.getElementsByClassName("comment_headling")[0];null!=commentElement&&(commentElement.innerHTML+='<a id="switch-comment" href="javascript:void(0);" title="切换为Gitalk" target="_self"><i class="fa fas fa-toggle-off" aria-hidden="true"></i></a>',document.getElementById("gitalk-container").style.display="none"),$("#switch-comment").click(function() {
 return switchComment(),!1
 }),function() {
-var t=document.getElementsByClassName("full_page");t.length>0&&(t[0].style.backgroundImage='url("https://ae01.alicdn.com/kf/H18a4b998752a4ae68b8e85d432a5aef0l.png"), linear-gradient(60deg, rgba(255, 165, 150, 0.5) 5%, rgba(0, 228, 255, 0.35)), url("https://c-ssl.duitang.com/uploads/item/201211/24/20121124232302_e3LkT.thumb.1000_0.jpeg")')
+var t=document.getElementsByClassName("full_page");t.length>0&&(t[0].style.backgroundImage='url("https://ae01.alicdn.com/kf/H18a4b998752a4ae68b8e85d432a5aef0l.png"), linear-gradient(60deg, rgba(255, 165, 150, 0.5) 5%, rgba(0, 228, 255, 0.35)),url("https://ae01.alicdn.com/kf/H21b5f6b8496141a1979a33666e1074d9x.jpg")')
 }();

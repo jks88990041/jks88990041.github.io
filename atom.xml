@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-07-09T06:35:26.234Z</updated>
+  <updated>2021-01-06T08:33:16.732Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>IDEA部署TomCat搭建WEB项目</title>
+    <link href="http://yoursite.com/2021/01/06/IDEA%E9%83%A8%E7%BD%B2TomCat%E6%90%AD%E5%BB%BAWEB%E9%A1%B9%E7%9B%AE/"/>
+    <id>http://yoursite.com/2021/01/06/IDEA%E9%83%A8%E7%BD%B2TomCat%E6%90%AD%E5%BB%BAWEB%E9%A1%B9%E7%9B%AE/</id>
+    <published>2021-01-06T08:33:09.483Z</published>
+    <updated>2021-01-06T08:33:16.732Z</updated>
+    
+    <content type="html"><![CDATA[<p>@<a href="TomCat搭建WEB项目">TOC</a></p><h2 id="TomCat-的作用"><a href="#TomCat-的作用" class="headerlink" title="TomCat 的作用"></a>TomCat 的作用</h2><p><img src= "/img/loading.gif" data-src="https://img-blog.csdnimg.cn/20210106160120625.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2prczg4OTk1NjU2,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"></p><h2 id="TomCat-的配置"><a href="#TomCat-的配置" class="headerlink" title="TomCat 的配置"></a>TomCat 的配置</h2><p>官网下载TomCat 9.0 版本。 需要配置JAVA_HOME，环境变量；并配置path 如图<br><img src= "/img/loading.gif" data-src="https://img-blog.csdnimg.cn/20210106142805753.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2prczg4OTk1NjU2,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><br>而后打开 bin文件夹下的 start.up。  出现黑框，并且开始读一串下来就算成功了。打开环回地址：<a href="http://localhost:8080/" target="_blank" rel="noopener">http://localhost:8080/</a>    看见TomCat的界面 表明这个服务器已经开启成功了。</p><h2 id="TomCat-构建JAVAWEB项目"><a href="#TomCat-构建JAVAWEB项目" class="headerlink" title="TomCat 构建JAVAWEB项目"></a>TomCat 构建JAVAWEB项目</h2><h3 id="WEB项目部署目录结构"><a href="#WEB项目部署目录结构" class="headerlink" title="WEB项目部署目录结构"></a>WEB项目部署目录结构</h3><p>TomCat文件夹下有一个 <strong>webapps</strong> 的文件目录用于存放JAVA项目。其下面，每个文件夹都是一个独立的项目（其默认有4个项目，都是自带的）其中的ROOT 是我们测试Tomcat时访问的Tomcat 主项目。</p><p>我们构建一个叫<strong>hello</strong>的<strong>WEB</strong>项目</p><ol><li>在<strong>webapps</strong> 下面 创建一个叫hello的文件夹</li><li>在<strong>hello</strong>文件夹下面 要包括 <strong>WEB-INF</strong>文件夹（必须得有，其实受保护目录，里面的东西用户不能直接访问，需要动态页面来访问。<strong>即用户不能通过浏览器地址的形式打开里面的东西</strong>），再创建一个 hello.html 的网页文件</li><li>在<strong>WEB-INF</strong>文件夹下，创建<strong>web.xml</strong>文件（把ROOT下面的web.xml内容复制过来，在删掉不要的留个大框），<strong>classes</strong>文件夹（存放项目所需的class文件）和<strong>lib</strong>文件夹（存放项目所需要的jar文件）</li></ol><p>之后重新启动Tomcat，访问对应的hello.html网页的 浏览器地址为：<a href="http://localhost:8080/hello/hello.html" target="_blank" rel="noopener">http://localhost:8080/hello/hello.html</a></p><h2 id="IDEA-创建一个JAVAWEB项目"><a href="#IDEA-创建一个JAVAWEB项目" class="headerlink" title="IDEA 创建一个JAVAWEB项目"></a>IDEA 创建一个JAVAWEB项目</h2><p>可以把上述的项目hello放到任何目录中，然后通过添加&lt; Context &gt;元素来指定项目的真实位置。在&lt; Host &gt;元素中添加&lt; Context &gt;元素，然后指定&lt; Context &gt;元素的path和docBase属性，其中path指定的为项目虚拟路径，可以随意的给出 例如path=“/h1”  而，docBase指定hello 项目真实存放的路径<br><img src= "/img/loading.gif" data-src="https://img-blog.csdnimg.cn/20210106151835748.png#pic_center" alt="在这里插入图片描述"><br>此时访问 对应的hello.html的 浏览器目的URL为 <a href="http://localhost:8080/h1/hello.html" target="_blank" rel="noopener">http://localhost:8080/h1/hello.html</a></p><p>IDEA创建 JAVAWEB项目（针对2020版本）</p><ol><li>首先先建立一个普通的JAVA项目</li><li>项目右击 ADD framework Support</li><li>勾选Web Application  选择创建web.xml</li><li>点击OK<br><img src= "/img/loading.gif" data-src="https://img-blog.csdnimg.cn/20210106153057691.png?x-oss-process=image/watermark,type_ZmFuZ3poZW5naGVpdGk,shadow_10,text_aHR0cHM6Ly9ibG9nLmNzZG4ubmV0L2prczg4OTk1NjU2,size_16,color_FFFFFF,t_70#pic_center" alt="在这里插入图片描述"><h3 id="IDEA-的JAVAWEB部署到TomCat-中"><a href="#IDEA-的JAVAWEB部署到TomCat-中" class="headerlink" title="IDEA 的JAVAWEB部署到TomCat 中"></a>IDEA 的JAVAWEB部署到TomCat 中</h3></li><li>点击右上角 的 Add Configuration</li><li>选择添加 <strong>Tomcat server  local</strong></li><li>添加 本地的 Tomcat地址。 </li><li>deployment 下 <strong>Application context</strong> 取名随便。 例如取名为 <strong>/txjava_web</strong></li><li>在 idea 的 web目录下 创建一个 <strong>txjava_web.html</strong>的 网页文件</li><li>点击右上角启动服务器。  注意要关闭之前所有的tomcat黑框。一次只能有一个tomcat执行</li><li>可以通过访问<a href="http://localhost:8080/txjava_web/txjava_web.html" target="_blank" rel="noopener">http://localhost:8080/txjava_web/txjava_web.html</a>   来访问对应的网页文件</li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;@&lt;a href=&quot;TomCat搭建WEB项目&quot;&gt;TOC&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&quot;TomCat-的作用&quot;&gt;&lt;a href=&quot;#TomCat-的作用&quot; class=&quot;headerlink&quot; title=&quot;TomCat 的作用&quot;&gt;&lt;/a&gt;TomCat 的作用&lt;/h2&gt;&lt;
+      
+    
+    </summary>
+    
+    
+    
+  </entry>
   
   <entry>
     <title>JDBC(1)</title>

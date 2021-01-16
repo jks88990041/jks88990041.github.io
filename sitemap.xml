@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2021/01/16/AJAX/</loc>
+    
+    <lastmod>2021-01-16T11:29:01.020Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2021/01/15/%E8%BF%87%E6%BB%A4%E5%99%A8(Filter)%E4%B8%8E%E7%9B%91%E5%90%AC%E5%99%A8(Listener)/</loc>
     
     <lastmod>2021-01-15T14:26:02.792Z</lastmod>

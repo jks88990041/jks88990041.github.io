@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2021/02/01/Maven/</loc>
+    
+    <lastmod>2021-02-01T15:54:44.939Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2021/01/31/Git/</loc>
     
     <lastmod>2021-01-31T15:12:45.242Z</lastmod>

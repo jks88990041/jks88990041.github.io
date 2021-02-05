@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2021/02/05/MyBatis/</loc>
+    
+    <lastmod>2021-02-05T15:57:01.739Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2021/02/04/%E6%A1%86%E6%9E%B6%E5%9F%BA%E7%A1%80/</loc>
     
     <lastmod>2021-02-04T13:31:52.079Z</lastmod>
